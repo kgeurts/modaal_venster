@@ -1,0 +1,121 @@
+body{
+	font-family: sans-serif;
+	position: relative;
+	margin: 0;
+}
+.wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1.5em;
+	padding: 1.5em;
+	justify-items: center;
+}
+/* De modale content in de warper bij voorbaat verbergen */
+.wrapper .modaalContent{
+	display: none;
+}
+
+/*H1 zo breed als het maar kan , behalve 2 gridcellen voor login en registeer!*/
+h1{
+	grid-column: 1/-3;
+}
+img, form{
+	box-shadow: 0 0 1em rgba(0,0,0,0.5);
+}
+/*De afb van de modale knoppen wat verkleinen*/
+img.modaal-knop{
+	max-width: 250px;
+	transition: transform .3s ease-out, box-shadow .4s ease-out;
+}
+img.modaal-knop:hover{
+	transform: scale(1.1);
+	box-shadow: 1em 1em 2.5em rgba(0,0,0,0.7);
+}
+.modaal-knop{
+	cursor: pointer;
+}
+.modaal-knop:hover{
+	color:red;
+	font-weight: 900;
+
+}
+
+/* Het Album opmaken*/
+.album{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	max-width: 80vw;
+	grid-gap: 1.5em;
+}
+.grid img{
+	max-width: 100%;
+}
+
+/* Het modale venster opmaken */
+.modaal-achtergrond{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+.modaal{
+	max-width: 80%;
+	padding: 2em;
+	border-radius: 1em;
+	background-color: #fff;
+	max-height: 80vh;
+	overflow-y: auto;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-row-gap: 1em ;
+	animation: vergroten 2.5s forwards;
+}
+
+@keyframes vergroten {
+	0%{transform: scale(0);}
+	100%{transform: scale(1);}
+}
+
+/*Sluit knop stijlen */
+.sluit-knop{
+	width: 2em;
+	justify-self: end;
+	font-size: 2em;
+	font-weight: 900;
+	transform: translateX(0.5em);
+	border: 0;
+}
+.sluit-knop:hover{
+color: red;
+}
+/* Overige stijling */
+.duur{
+	float: right;
+}
+.validatie{
+margin-top: 2em;
+text-align: center;
+}
+.validatie img {
+    height: 2em;
+    width: auto;
+    border: 0;
+    margin: 0 .3em;
+}
+html, body {
+	min-height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+
+
+
+
